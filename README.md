@@ -1,12 +1,11 @@
-# v9
+# v9-mp
 
-[![v9](https://maven-badges.herokuapp.com/maven-central/dev.romainguy/v9/badge.svg?subject=v9)](https://maven-badges.herokuapp.com/maven-central/dev.romainguy/v9)
-[![Android build status](https://github.com/romainguy/v9/workflows/Android/badge.svg)](https://github.com/romainguy/v9/actions?query=workflow%3AAndroid)
+[![Build status](https://github.com/amarland/v9-mp/workflows/Build/badge.svg)](https://github.com/amarland/v9-mp/actions?query=workflow%3ABuild)
 
-v9 is an Android library that provides the ability to dynamically resize
-[Path](https://developer.android.com/reference/android/graphics/Path) objects as you would
-[9-patch bitmaps](https://developer.android.com/studio/write/draw9patch). In the example below,
-the chat bubble is dynamically resized while preserving the corners:
+v9-mp is a Jetpack Compose Multiplatform (Android + Desktop) library that provides the ability to
+dynamically resize [Path](https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/Path)
+objects as you would [9-patch bitmaps](https://developer.android.com/studio/write/draw9patch). In
+the example below, the chat bubble is dynamically resized while preserving the corners:
 
 https://user-images.githubusercontent.com/869684/186994957-a25978ce-c980-45bd-9b84-452d6334a07e.mov
 
@@ -20,20 +19,7 @@ When multiple slices are used, the amount of stretch applied is proportional to 
 each slice. This behavior is used in the example above to keep the dark bars centered vertically
 and to spaced them equally horizontally, thus properly preserving details inside the path.
 
-v9 is compatible with API 21+.
-
-## Maven
-
-```gradle
-repositories {
-    // ...
-    mavenCentral()
-}
-
-dependencies {
-    implementation 'dev.romainguy:v9:0.1.1'
-}
-```
+v9-mp is compatible with Android API 21+.
 
 ## How to use
 
@@ -44,9 +30,8 @@ and a single horizontal slice:
 val pathResizer = path.slice(Slices(9.0f, 7.0f, 15.0f, 13.0f))
 ```
 
-This syntax follows the rectangle convention on Android of passing the top, left, right, and
-bottom coordinates: there's a vertical slice from 9.0 to 15.0 and a horizontal slice from 7.0
-to 13.0.
+This syntax follows the convention of passing the top, left, right, and bottom coordinates:
+there's a vertical slice from 9.0 to 15.0 and a horizontal slice from 7.0 to 13.0.
 
 You can also explicitly declare a list of slices:
 
@@ -70,8 +55,8 @@ For performance considerations, you can pass an existing path to `resize()`. Thi
 will be rewound and returned:
 
 ```kotlin
-val resizedPath = pathResizer.resize(width, height, destinationpath)
-// resizedPath === destinationpath
+val resizedPath = pathResizer.resize(width, height, destinationPath)
+// resizedPath === destinationPath
 ```
 
 ## License

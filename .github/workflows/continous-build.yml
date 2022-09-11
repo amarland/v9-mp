@@ -1,4 +1,4 @@
-name: Android
+name: Build
 
 on:
   push:
@@ -6,14 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
-  workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-
       - name: Build library
-        run: ./gradlew assembleRelease
+        run: ./gradlew :v9:assemble
