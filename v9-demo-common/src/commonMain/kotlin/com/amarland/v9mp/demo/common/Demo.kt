@@ -42,13 +42,11 @@ fun Demo() {
     MaterialTheme(
         colors = darkColors(
             primary = Color(0xFF2196F3),
-            secondary = Color(0xFF00DE7A)
+            secondary = Color(0xFF3DDC84),
+            surface = Color(0xFF073042)
         )
     ) {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colors.background
-        ) {
+        Surface(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.padding(vertical = 16.dp)) {
                 var pathWidth by remember { mutableStateOf(68.0f) }
                 var pathHeight by remember { mutableStateOf(32.0f) }

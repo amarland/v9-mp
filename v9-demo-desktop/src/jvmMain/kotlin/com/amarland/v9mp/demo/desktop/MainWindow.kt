@@ -19,7 +19,7 @@ fun main() = singleWindowApplication(
         height = 900.dp
     ),
     title = "v9mp Demo",
-    /* icon = useResource("ic_launcher.svg") { stream ->
-        loadSvgPainter(stream, Density(1.0f))
-    } */
-) { Demo() }
+    icon = useResource("ic_launcher.svg") { stream -> loadSvgPainter(stream, Density(1.0f)) }
+) {
+    Demo()
+}

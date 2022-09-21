@@ -7,6 +7,8 @@ plugins {
 }
 
 android {
+    namespace = "com.amarland.v9mp.demo.android"
+
     compileSdk = (extra["android.compileSdk"] as String).toInt()
 
     defaultConfig {

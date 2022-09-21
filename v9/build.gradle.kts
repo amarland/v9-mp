@@ -58,6 +58,8 @@ kotlin {
 }
 
 android {
+    namespace = "com.amarland.v9mp"
+
     compileSdk = (extra["android.compileSdk"] as String).toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
