@@ -1,6 +1,5 @@
 @file:Suppress("UnstableApiUsage", "UNUSED_VARIABLE")
 
-import org.jetbrains.compose.ComposeBuildConfig
 import org.jetbrains.compose.compose
 
 plugins {
@@ -36,7 +35,6 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.compose.ui:ui-graphics:${ComposeBuildConfig.composeVersion}")
                 implementation("dev.romainguy:pathway:0.7.0")
             }
         }

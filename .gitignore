@@ -26,6 +26,7 @@ local.properties
 .idea/libraries
 .idea/caches
 .idea/modules.xml
+.idea/markdown.xml
 .externalNativeBuild
 lint/intermediates/
 lint/generated/

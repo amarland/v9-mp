@@ -29,10 +29,10 @@ android {
 
     buildFeatures.compose = true
 
-    composeOptions.kotlinCompilerExtensionVersion = "1.1.1"
+    composeOptions.kotlinCompilerExtensionVersion = "1.3.2"
 }
 
-val composeVersion = extra["compose.version"] as String
+val composeVersion = "1.2.1"
 
 dependencies {
     implementation(project(":v9-demo-common"))
