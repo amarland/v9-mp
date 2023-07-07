@@ -57,7 +57,6 @@ class PathSegmentsTest {
         val shape2 = Path2D.Float()
 
         for (segment in path.segments()) {
-            @Suppress("NON_EXHAUSTIVE_WHEN_STATEMENT")
             when (segment.type) {
                 PathSegmentType.MOVE -> shape2.moveTo(segment.points[0].x, segment.points[0].y)
                 PathSegmentType.LINE -> shape2.lineTo(segment.points[1].x, segment.points[1].y)

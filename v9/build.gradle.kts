@@ -12,13 +12,11 @@ version = extra["v9mp.version"] as String
 kotlin {
     android()
 
-    jvm("desktop") {
+    jvm {
         compilations.all {
             kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
         }
     }
-
-    // val kotlinVersion = extra["kotlin.version"] as String
 
     sourceSets {
         val commonMain by getting {
@@ -36,12 +34,12 @@ kotlin {
                 implementation("dev.romainguy:pathway:0.12.0")
             }
         }
-        val desktopMain by getting {
+        val jvmMain by getting {
             dependencies {
                 implementation(compose.ui)
             }
         }
-        val desktopTest by getting {
+        val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(compose.desktop.currentOs)

@@ -36,7 +36,7 @@ android {
 
 dependencies {
     implementation(project(":v9-demo-common"))
-    implementation("androidx.activity:activity-compose:1.7.1")
+    implementation("androidx.activity:activity-compose:1.7.2")
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
 }

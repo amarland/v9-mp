@@ -16,4 +16,4 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
       - name: Build library
-        run: ./gradlew :v9:assembleRelease
+        run: ./gradlew :v9:assemble
