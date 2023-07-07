@@ -4,7 +4,6 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-        // maven("https://packages.jetbrains.team/maven/p/reflekt/reflekt")
     }
 
     plugins {
@@ -13,7 +12,6 @@ pluginManagement {
         id("com.android.application").version(extra["agp.version"] as String)
         id("com.android.library").version(extra["agp.version"] as String)
         id("org.jetbrains.compose").version(extra["compose.version"] as String)
-        // id("org.jetbrains.reflekt").version(extra["kotlin.version"] as String)
     }
 }
 

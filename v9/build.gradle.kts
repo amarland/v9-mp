@@ -1,7 +1,5 @@
 @file:Suppress("UnstableApiUsage", "UNUSED_VARIABLE")
 
-import org.jetbrains.compose.compose
-
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
@@ -16,7 +14,7 @@ kotlin {
 
     jvm("desktop") {
         compilations.all {
-            kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+            kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
         }
     }
 
@@ -35,15 +33,12 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("dev.romainguy:pathway:0.7.0")
+                implementation("dev.romainguy:pathway:0.12.0")
             }
         }
         val desktopMain by getting {
-            // apply(plugin = "org.jetbrains.reflekt")
-
             dependencies {
                 implementation(compose.ui)
-                // implementation("org.jetbrains.reflekt:reflekt-dsl:$kotlinVersion")
             }
         }
         val desktopTest by getting {

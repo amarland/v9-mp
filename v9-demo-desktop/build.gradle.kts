@@ -1,6 +1,5 @@
 @file:Suppress("UNUSED_VARIABLE")
 
-import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
@@ -11,7 +10,7 @@ plugins {
 kotlin {
     jvm {
         compilations.all {
-            kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+            kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
         }
         withJava()
     }

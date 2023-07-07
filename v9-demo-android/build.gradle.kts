@@ -6,6 +6,8 @@ plugins {
     kotlin("android")
 }
 
+val composeVersion = extra["compose.version"] as String
+
 android {
     namespace = "com.amarland.v9mp.demo.android"
 
@@ -21,23 +23,20 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
 
     buildFeatures.compose = true
 
-    composeOptions.kotlinCompilerExtensionVersion = "1.3.2"
+    composeOptions.kotlinCompilerExtensionVersion = composeVersion
 }
-
-val composeVersion = "1.2.1"
 
 dependencies {
     implementation(project(":v9-demo-common"))
-    implementation("androidx.activity:activity-compose:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
+    implementation("androidx.activity:activity-compose:1.7.1")
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")
 }
