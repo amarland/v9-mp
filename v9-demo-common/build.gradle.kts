@@ -1,7 +1,5 @@
 @file:Suppress("UnstableApiUsage", "UNUSED_VARIABLE")
 
-import org.jetbrains.compose.compose
-
 plugins {
     kotlin("multiplatform")
     id("org.jetbrains.compose")
@@ -35,10 +33,7 @@ android {
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
-    defaultConfig {
-        minSdk = (extra["android.minSdk"] as String).toInt()
-        targetSdk = (extra["android.targetSdk"] as String).toInt()
-    }
+    defaultConfig.minSdk = (extra["android.minSdk"] as String).toInt()
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

@@ -10,7 +10,11 @@ group = extra["v9mp.group"] as String
 version = extra["v9mp.version"] as String
 
 kotlin {
-    android()
+    android {
+        compilations.all {
+            kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
+    }
 
     jvm {
         compilations.all {
@@ -57,7 +61,6 @@ android {
 
     defaultConfig {
         minSdk = (extra["android.minSdk"] as String).toInt()
-        targetSdk = (extra["android.targetSdk"] as String).toInt()
     }
 
     compileOptions {

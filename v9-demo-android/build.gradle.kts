@@ -15,7 +15,6 @@ android {
 
     defaultConfig {
         minSdk = (extra["android.minSdk"] as String).toInt()
-        targetSdk = (extra["android.targetSdk"] as String).toInt()
 
         applicationId = "com.amarland.v9mp.demo"
         versionCode = 1
