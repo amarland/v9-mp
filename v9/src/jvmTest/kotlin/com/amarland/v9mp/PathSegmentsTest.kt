@@ -125,8 +125,13 @@ class PathSegmentsTest {
     private fun createBufferedImage(width: Int, height: Int) =
         BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
-    private fun BufferedImage.applyGraphics2D(block: Graphics2D.() -> Unit) =
-        apply { (graphics as Graphics2D).also(block) }
+    private inline fun BufferedImage.applyGraphics2D(block: Graphics2D.() -> Unit) =
+        apply {
+            createGraphics().run {
+                block()
+                dispose()
+            }
+        }
 
     private fun red(color: Int) = color shr 16 and 0xFF
 
